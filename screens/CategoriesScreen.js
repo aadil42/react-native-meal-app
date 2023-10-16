@@ -16,7 +16,6 @@ const CategoriesScreen = () => {
                   keyExtractor={(item) => item.id} 
                   renderItem={renderer}
                   numColumns={2}
-                  style={styles.subContainer}
             />
       </View> 
     )

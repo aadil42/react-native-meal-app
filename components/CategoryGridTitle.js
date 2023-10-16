@@ -2,10 +2,9 @@ import { Pressable, View, Text, StyleSheet, Platform } from "react-native";
 
 const CategoryGridTitle = ({title, color}) => {
 
-
     return (
         <View style={[styles.container, {backgroundColor: color}]}>
-            <Pressable android_ripple={{color:  "red"}}>
+            <Pressable styles={styles.btn} android_ripple={{color:  "#ccc"}}>
                 <View style={styles.centerText}>
                     <Text style={styles.blackColor}>
                         {title}
@@ -25,7 +24,13 @@ const styles = StyleSheet.create(
             height: 135,
             borderRadius: 8,
             margin: 15,
-            overflow: "hidden"
+            overflow: "hidden",
+        },
+        btn: {
+            shadowColor: "#000",
+            shadowOpacity: .25,
+            shadowOffset: {width: 0, height: 2},
+            shadowRadius: 8
         },
         centerText: {
             justifyContent: 'center',
