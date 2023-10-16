@@ -33,7 +33,6 @@ export default CategoriesScreen;
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: 1,
         width: "100%",
         alignItems: "center"
     },
