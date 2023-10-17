@@ -1,7 +1,6 @@
 import { Text, Image, View, StyleSheet, Pressable } from 'react-native';
 
 const MealItem = ({ title, imageUrl }) => {
-    console.log(imageUrl);
     return (
         <View style={styles.container}>
             <Pressable style={styles.subContainer} >
@@ -16,7 +15,6 @@ const styles = StyleSheet.create({
     image: {
         width: "100%",
         height: 200,
-        overflow: "hidden"
     },
     container: {
         alignItems: 'center',
@@ -24,16 +22,18 @@ const styles = StyleSheet.create({
     },
     subContainer: {
         width: "80%",
-        borderRadius: 10,
+        borderRadius: 8,
         borderWidth: 1,
-        marginBottom: 18, 
+        marginBottom: 18,
+        backgroundColor: "white",
+        overflow: "hidden" 
     },
     text: {
         padding: 10,
         textAlign: "center",
         fontSize: 16,
         fontWeight: "bold",
-        letterSpacing: .8
+        letterSpacing: .8,
     }
 })
 export default MealItem;
