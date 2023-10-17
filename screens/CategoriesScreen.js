@@ -8,9 +8,13 @@ import CategoryGridTitle from "../components/CategoryGridTitle";
 const CategoriesScreen = ({ navigation }) => {
 
     const renderer = (itemData) => {
-
+        
+        const item = itemData.item;
         const pressHandler = () => {
-            navigation.navigate('MealOverview');
+            navigation.navigate('MealOverview', {
+                catId: item.id,
+                catTitle: item.title
+            });
         }
 
         return (
