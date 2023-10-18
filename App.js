@@ -47,7 +47,6 @@ export default function App() {
             title: "Meal Detail",
             headerStyle: {backgroundColor: "black"},
             headerTintColor: "white",
-            contentStyle: {backgroundColor: "white"}
           }}
           name="MealDetail" 
           component={MealDetail} />

@@ -1,10 +1,48 @@
 import { Text, Image, View, StyleSheet, Pressable } from 'react-native';
 
-const MealItem = ({ title, imageUrl, id, navigation }) => {
+    // id,
+    // categoryIds,
+    // title,
+    // affordability,
+    // complexity,
+    // imageUrl,
+    // duration,
+    // ingredients,
+    // steps,
+    // isGlutenFree,
+    // isVegan,
+    // isVegetarian,
+    // isLactoseFree
+const MealItem = ({ 
+                    title, 
+                    imageUrl, 
+                    id, 
+                    navigation,
+                    affordability,
+                    complexity,
+                    duration,
+                    ingredients,
+                    steps,
+                    isGlutenFree,
+                    isVegan,
+                    isVegetarian,
+                    isLactoseFree
+                }) => {
 
-    const pressHandler = () => {
+        const pressHandler = () => {
         navigation.navigate("MealDetail", {
-            mealId: id
+            id,
+            title,
+            imageUrl,
+            duration,
+            ingredients,
+            steps,
+            isGlutenFree,
+            isVegan,
+            isVegetarian,
+            isLactoseFree,
+            affordability,
+            complexity,
         });
     }
 
@@ -12,7 +50,7 @@ const MealItem = ({ title, imageUrl, id, navigation }) => {
         <View style={styles.container}>
             <Pressable onPress={pressHandler} style={styles.subContainer} >
                     <Image source={{uri: imageUrl}} style={styles.image} />
-                    <Text style={styles.text}>{title} from meal item</Text>
+                    <Text style={styles.text}>{title}</Text>
             </Pressable>
         </View>
     );
