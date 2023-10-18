@@ -1,9 +1,11 @@
 import { Text, Image, View, StyleSheet, Pressable } from 'react-native';
 
-const MealItem = ({ title, imageUrl }) => {
+const MealItem = ({ title, imageUrl, pressHandler }) => {
+
+    
     return (
         <View style={styles.container}>
-            <Pressable style={styles.subContainer} >
+            <Pressable onPress={pressHandler} style={styles.subContainer} >
                     <Image source={{uri: imageUrl}} style={styles.image} />
                     <Text style={styles.text}>{title} from meal item</Text>
             </Pressable>

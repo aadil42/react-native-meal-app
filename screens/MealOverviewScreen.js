@@ -7,14 +7,20 @@ import MealItem from '../components/MealItem';
 const MealOverviewScreen = ({ route, navigation }) => {
 
     const id = route.params.catId;
+
     const mealList = MEALS.filter((meal) => {
         if(meal.categoryIds.includes(id)) return meal; 
     });
 
+    const pressHandler = () => {
+        navigation.navigate("MealDetail");
+    }
+
     const CatTitle = route.params.catTitle;
 
     const renderer = (itemData) => {
-        const item = itemData.item;
+        const item = {...itemData.item, pressHandler};
+
         return <MealItem  {...item} />;
     }
 
