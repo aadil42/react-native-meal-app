@@ -1,8 +1,13 @@
 import { Text, Image, View, StyleSheet, Pressable } from 'react-native';
 
-const MealItem = ({ title, imageUrl, pressHandler }) => {
+const MealItem = ({ title, imageUrl, id, navigation }) => {
 
-    
+    const pressHandler = () => {
+        navigation.navigate("MealDetail", {
+            mealId: id
+        });
+    }
+
     return (
         <View style={styles.container}>
             <Pressable onPress={pressHandler} style={styles.subContainer} >

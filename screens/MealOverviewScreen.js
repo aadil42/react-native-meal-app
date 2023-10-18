@@ -12,14 +12,12 @@ const MealOverviewScreen = ({ route, navigation }) => {
         if(meal.categoryIds.includes(id)) return meal; 
     });
 
-    const pressHandler = () => {
-        navigation.navigate("MealDetail");
-    }
+
 
     const CatTitle = route.params.catTitle;
 
     const renderer = (itemData) => {
-        const item = {...itemData.item, pressHandler};
+        const item = {...itemData.item, navigation};
 
         return <MealItem  {...item} />;
     }

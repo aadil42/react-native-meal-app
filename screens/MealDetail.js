@@ -1,10 +1,11 @@
 
 import { Text } from 'react-native';
 
-const MealDetail = () => {
+const MealDetail = ({ route }) => {
+
     return (
         <Text>
-            this is meal Detail screen
+            this is meal Detail {route.params.mealId}
         </Text>
     );
 }
