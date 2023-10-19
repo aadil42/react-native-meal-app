@@ -1,7 +1,9 @@
+import { useLayoutEffect } from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import IconBtn from '../components/IconBtn';
 
 import List from "../components/List";
-const MealDetail = ({ route }) => {
+const MealDetail = ({ route, navigation }) => {
 
     const title = route.params.title;
     const id = route.params.id;
@@ -12,6 +14,18 @@ const MealDetail = ({ route }) => {
     const image = route.params.imageUrl;
     const duration = route.params.duration;
 
+    const iconPressHandler = () => {
+        console.log('pressed!!');
+    }
+
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => {
+                return <IconBtn pressHandler={iconPressHandler} icon="star" size={24} color="white" />
+            }
+        })
+    }, [navigation]);
+    
     return (
         <ScrollView style={styles.container}>
               <Image style={styles.image} source={{uri: image}} />   
