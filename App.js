@@ -21,7 +21,11 @@ const DrawerNavigation = () => {
         {
           headerStyle: {backgroundColor: "black"},
           headerTintColor: "white",
-          sceneContainerStyle: {backgroundColor: "#24180f"}
+          sceneContainerStyle: {backgroundColor: "#24180f"},
+          drawerContentStyle: {backgroundColor: "#351401"},
+          drawerActiveBackgroundColor: "#e4baa1",
+          drawerActiveTintColor: "#351401",
+          drawerInactiveTintColor: "#fff",
         }
       }
       >
