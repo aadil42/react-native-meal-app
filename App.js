@@ -9,6 +9,7 @@ import CategoriesScreen from './screens/CategoriesScreen';
 import MealOverviewScreen from './screens/MealOverviewScreen';
 import MealDetail from './screens/MealDetail';
 import Favorite from './screens/Favorite';
+import FavoriteContextProvider from './store/context/favorite-context';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -52,39 +53,41 @@ export default function App() {
   return (
     <>
       <StatusBar style='light'/>
+      <FavoriteContextProvider>
       <NavigationContainer>
-        <Stack.Navigator 
-          screenOptions={{
-            headerStyle: { backgroundColor: '#351401' },
-            headerTintColor: 'white',
-            contentStyle: { backgroundColor: '#3f2f25' },
-          }}
-        >
-          <Stack.Screen 
-          options={{
-            headerShown: false
-          }} 
-          name="MealsCategories" 
-          component={DrawerNavigation} />
+          <Stack.Navigator 
+            screenOptions={{
+              headerStyle: { backgroundColor: '#351401' },
+              headerTintColor: 'white',
+              contentStyle: { backgroundColor: '#3f2f25' },
+            }}
+          >
+            <Stack.Screen 
+            options={{
+              headerShown: false
+            }} 
+            name="MealsCategories" 
+            component={DrawerNavigation} />
 
-          <Stack.Screen 
-          options={{
-            title: "Meal Overview"
-          }}
-          name="MealOverview" 
-          component={MealOverviewScreen} />
+            <Stack.Screen 
+            options={{
+              title: "Meal Overview"
+            }}
+            name="MealOverview" 
+            component={MealOverviewScreen} />
 
-          <Stack.Screen 
-          options={{
-            title: "Meal Detail",
-            headerStyle: {backgroundColor: "black"},
-            headerTintColor: "white",
-          }}
-          name="MealDetail" 
-          component={MealDetail} />
+            <Stack.Screen 
+            options={{
+              title: "Meal Detail",
+              headerStyle: {backgroundColor: "black"},
+              headerTintColor: "white",
+            }}
+            name="MealDetail" 
+            component={MealDetail} />
 
-        </Stack.Navigator>
-      </NavigationContainer>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </FavoriteContextProvider>
     </>
   );
 }

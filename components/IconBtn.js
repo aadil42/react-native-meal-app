@@ -4,9 +4,12 @@ import { Pressable, StyleSheet } from 'react-native';
 const IconBtn = ({icon, size, color, pressHandler}) => {
 
     return (
-        <Pressable style={({pressed}) => {
+        <Pressable 
+        style={({pressed}) => {
             return pressed && styles.pressed
-        }} onPress={pressHandler}>
+        }} 
+        onPress={pressHandler}
+        >
             <Ionicons name={icon} size={size} color={color} />
         </Pressable>
     );

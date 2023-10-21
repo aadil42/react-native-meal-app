@@ -1,9 +1,13 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useContext } from 'react';
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import IconBtn from '../components/IconBtn';
 
+import { FavoriteContext } from "../store/context/favorite-context";
+
 import List from "../components/List";
 const MealDetail = ({ route, navigation }) => {
+
+    const favContext = useContext(FavoriteContext);
 
     const title = route.params.title;
     const id = route.params.id;
@@ -14,17 +18,20 @@ const MealDetail = ({ route, navigation }) => {
     const image = route.params.imageUrl;
     const duration = route.params.duration;
 
+    const isFavorite = favContext.favoriteIds.includes(id);
+
     const iconPressHandler = () => {
-        console.log('pressed!!');
+        if(!isFavorite) return favContext.add(id);
+        return favContext.remove(id);
     }
 
     useLayoutEffect(() => {
         navigation.setOptions({
             headerRight: () => {
-                return <IconBtn pressHandler={iconPressHandler} icon="star" size={24} color="white" />
+                return <IconBtn pressHandler={iconPressHandler} icon={isFavorite ? "star" : "star-outline"} size={24} color="white" />
             }
         })
-    }, [navigation]);
+    }, [navigation, isFavorite]);
     
     return (
         <ScrollView style={styles.container}>
