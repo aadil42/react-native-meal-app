@@ -5,7 +5,7 @@ const List = ({ title, list}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
-            <Text>{title}</Text>
+            {/* <Text>{title}</Text> */}
             {list.map((listItem, index) => {
                 return (
                     <Text key={index} style={styles.item}>
@@ -29,7 +29,9 @@ const styles = StyleSheet.create({
         borderColor:  "#e2b497",
         color: "#e2b497",
         marginTop: 20,
+        marginBottom: 10,
         width: "80%"
+        
     },  
     item: {
         backgroundColor: "#e2b497",
