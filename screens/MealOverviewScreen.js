@@ -12,8 +12,6 @@ const MealOverviewScreen = ({ route, navigation }) => {
         if(meal.categoryIds.includes(id)) return meal; 
     });
 
-
-
     const CatTitle = route.params.catTitle;
 
     const renderer = (itemData) => {
