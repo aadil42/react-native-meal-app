@@ -2,6 +2,7 @@ import { useLayoutEffect } from 'react';
 import { MEALS }  from '../data/dummy-data';
 import MealList from '../components/MealList';
 
+
 const MealOverviewScreen = ({ route, navigation }) => {
 
     const id = route.params.catId;
@@ -10,6 +11,7 @@ const MealOverviewScreen = ({ route, navigation }) => {
     });
 
     const CatTitle = route.params.catTitle;
+
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -21,4 +23,5 @@ const MealOverviewScreen = ({ route, navigation }) => {
         <MealList list={catList} navigation={navigation}/>
     );
 }
+
 export default MealOverviewScreen;
